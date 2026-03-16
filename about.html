@@ -44,7 +44,7 @@
   }
   .about-h2 {
     font-family: Sen, sans-serif;
-    font-size: clamp(28px, 4vw, 40px);
+    font-size: clamp(24px, 4vw, 40px);
     font-weight: 800;
     color: #1c4f9c;
     margin: 0 0 20px;
@@ -327,7 +327,7 @@
   }
   .how-step-num {
     font-family: Sen, sans-serif;
-    font-size: 3rem;
+    font-size: clamp(2rem, 6vw, 3rem);
     font-weight: 800;
     color: #facb05;
     line-height: 1;
@@ -450,6 +450,24 @@
     .founding-strip { padding: 0 20px; }
     .join-why-grid { padding: 0 20px; }
     .events-grid { padding: 0 20px; }
+  }
+
+  @media (max-width: 600px) {
+    .about-section, .about-section-alt { padding: 48px 0; }
+    .mission-section { padding: 48px 0; }
+    .how-section { padding: 48px 0; }
+    .event-card-img { height: 160px; }
+    .join-why-card { padding: 28px 20px; }
+    .how-step { padding: 28px 20px; }
+    .founding-stat { padding: 20px 24px; }
+    .about-hero { min-height: 360px; }
+    .cta-banner { padding: 48px 16px; }
+    .cta-links { flex-direction: column; align-items: center; }
+  }
+  @media (max-width: 400px) {
+    .about-hero-title { font-size: 1.9rem; }
+    .mission-card { padding: 24px 20px; }
+    .section-center { padding: 0 16px 40px; }
   }
 </style>
 </head>
