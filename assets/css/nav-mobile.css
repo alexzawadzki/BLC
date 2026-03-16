@@ -1,0 +1,54 @@
+/* ============================================================
+   Mobile nav overrides — brand colours per BRANDING.md
+   Navy: #1c4f9c  |  Gold: #ffde03  |  White: #f9f9f9
+============================================================ */
+
+/* Hamburger icon — white to be visible on navy navbar */
+.w-nav-button {
+  color: #f9f9f9;
+}
+
+/* Hamburger button when menu is open */
+.w-nav-button.w--open {
+  background-color: #162d52;
+  color: #ffde03;
+}
+
+/* Mobile dropdown panel */
+[data-nav-menu-open] {
+  background-color: #1c4f9c !important;
+  padding: 4px 0 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Each nav link in the open mobile menu */
+[data-nav-menu-open] .nav-link {
+  display: block;
+  color: #f9f9f9;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 14px 28px;
+  margin: 0;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  transition: background 0.2s, color 0.2s;
+}
+
+[data-nav-menu-open] .nav-link:last-child {
+  border-bottom: none;
+}
+
+[data-nav-menu-open] .nav-link:hover {
+  background-color: rgba(255, 222, 3, 0.1);
+  color: #ffde03;
+}
+
+[data-nav-menu-open] .nav-link.w--current {
+  color: #ffde03;
+  background-color: rgba(255, 222, 3, 0.08);
+  border-left: 3px solid #ffde03;
+  padding-left: 25px;
+}
