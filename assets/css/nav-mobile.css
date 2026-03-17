@@ -1,54 +1,148 @@
 /* ============================================================
-   Mobile nav overrides — brand colours per BRANDING.md
+   Mobile nav — full-screen overlay
    Navy: #1c4f9c  |  Gold: #ffde03  |  White: #f9f9f9
+   Dark Navy: #0d1f3c
 ============================================================ */
 
-/* Hamburger icon — white to be visible on navy navbar */
+/* Hamburger icon — white on navy navbar */
 .w-nav-button {
   color: #f9f9f9;
 }
 
-/* Hamburger button when menu is open */
-.w-nav-button.w--open {
-  background-color: #162d52;
+/* Hide the Webflow dropdown menu on mobile (replaced by custom overlay) */
+@media (max-width: 991px) {
+  .w-nav-menu {
+    display: none !important;
+  }
+}
+
+/* ── Full-screen overlay ──────────────────────────────────── */
+
+.mobile-nav-overlay {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0d1f3c;
+  z-index: 9999;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-nav-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ── Header row: logo + close button ─────────────────────── */
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 28px;
+  flex-shrink: 0;
+}
+
+.mobile-nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.mobile-nav-logo img {
+  display: block;
+  width: 48px;
+  height: auto;
+}
+
+.mobile-nav-logo-name {
+  color: #f9f9f9;
+  font-family: Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.mobile-nav-close {
+  background: none;
+  border: none;
+  color: #f9f9f9;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: color 0.2s, background 0.2s;
+}
+
+.mobile-nav-close:hover {
   color: #ffde03;
+  background: rgba(255, 255, 255, 0.08);
 }
 
-/* Mobile dropdown panel */
-[data-nav-menu-open] {
-  background-color: #1c4f9c !important;
-  padding: 4px 0 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+/* ── Nav links ───────────────────────────────────────────── */
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 28px 48px;
+  flex: 1;
 }
 
-/* Each nav link in the open mobile menu */
-[data-nav-menu-open] .nav-link {
+.mobile-nav-link {
   display: block;
   color: #f9f9f9;
   font-family: Roboto, sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  padding: 14px 28px;
-  margin: 0;
-  border-radius: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: left;
-  transition: background 0.2s, color 0.2s;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 14px 0;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  border: none;
+  /* Animation: slide in from left */
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: color 0.2s, opacity 0.35s ease, transform 0.35s ease;
 }
 
-[data-nav-menu-open] .nav-link:last-child {
-  border-bottom: none;
+.mobile-nav-overlay.is-open .mobile-nav-link {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-[data-nav-menu-open] .nav-link:hover {
-  background-color: rgba(255, 222, 3, 0.1);
+/* Stagger each link */
+.mobile-nav-overlay.is-open .mobile-nav-link:nth-child(1) { transition-delay: 0.05s; }
+.mobile-nav-overlay.is-open .mobile-nav-link:nth-child(2) { transition-delay: 0.10s; }
+.mobile-nav-overlay.is-open .mobile-nav-link:nth-child(3) { transition-delay: 0.15s; }
+.mobile-nav-overlay.is-open .mobile-nav-link:nth-child(4) { transition-delay: 0.20s; }
+.mobile-nav-overlay.is-open .mobile-nav-link:nth-child(5) { transition-delay: 0.25s; }
+
+.mobile-nav-link:hover {
   color: #ffde03;
 }
 
-[data-nav-menu-open] .nav-link.w--current {
+.mobile-nav-link.is-current {
   color: #ffde03;
-  background-color: rgba(255, 222, 3, 0.08);
-  border-left: 3px solid #ffde03;
-  padding-left: 25px;
+}
+
+/* Only render overlay on mobile */
+@media (min-width: 992px) {
+  .mobile-nav-overlay {
+    display: none !important;
+  }
 }
