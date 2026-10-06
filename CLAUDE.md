@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static HTML website for **Berlin Lions Club** (Berlin, CT), hosted on Cloudflare Pages at `new.berlinlions.org`. There is no build step — all files are served as-is.
+Static HTML website for **Berlin Lions Club** (Berlin, CT), hosted on Cloudflare Workers (static assets) at `new.berlinlions.org`. There is no build step — all files are served as-is.
 
 ## Development
 
@@ -61,6 +61,6 @@ Luminary sales link: `https://berlin-lions-club.square.site/`. `tickets.berlinli
 
 ## Deployment
 
-Pushing to `main` deploys automatically via **Cloudflare Pages** (live within about a minute). The `CNAME` file sets the custom domain (`new.berlinlions.org`) — do not modify it.
+Pushing to `main` deploys automatically via **Cloudflare Workers Builds** (Worker `blc`; live within about 1–2 minutes). There is no wrangler config in the repo — the repo root is uploaded as static assets. Files listed in `.assetsignore` (gitignore syntax) are not uploaded; `CLAUDE.md` is excluded there. A GitHub Pages workflow also still runs on push, but the custom domain is served by Cloudflare. The `CNAME` file sets the custom domain (`new.berlinlions.org`) — do not modify it.
 
 Cloudflare serves pretty URLs: `/charity.html` 307-redirects to `/charity`. When verifying a deploy with curl, use `-L`. Internal links should keep using the `.html` filenames so local preview still works.

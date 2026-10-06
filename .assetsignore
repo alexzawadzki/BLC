@@ -1,0 +1,2 @@
+# Files Wrangler should not upload as public site assets (same syntax as .gitignore)
+CLAUDE.md
