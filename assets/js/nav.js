@@ -48,11 +48,14 @@
     { href: 'charity.html',            label: 'Charity'     },
     { href: 'support.html',            label: 'Support Us'  },
     { href: 'about.html',              label: 'About Us'    },
+    { href: 'contact.html',            label: 'Contact'     },
   ];
 
   /* Detect current page */
   var currentFile = window.location.pathname.split('/').pop();
   if (!currentFile) currentFile = 'index.html';
+  /* Cloudflare Pages serves pretty URLs (/charity) — map back to the .html file */
+  if (currentFile.indexOf('.') === -1) currentFile += '.html';
 
   pages.forEach(function (page) {
     var a = document.createElement('a');
