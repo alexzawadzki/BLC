@@ -451,6 +451,86 @@
   color: #fff;
 }
 
+/* ── Luminaries ── */
+
+.luminary-section {
+  background-color: #1c4f9c;
+}
+
+.luminary-inner {
+  display: flex;
+  align-items: stretch;
+  min-height: 320px;
+}
+
+.luminary-text {
+  flex: 1;
+  padding: 52px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.luminary-eyebrow {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #facb05;
+  margin-bottom: 14px;
+}
+
+.luminary-heading {
+  font-family: Sen, Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.luminary-body {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 15px;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.8;
+  max-width: 460px;
+  margin: 0 0 28px;
+}
+
+.luminary-btn {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: #facb05;
+  color: #222;
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background .2s, transform .2s;
+}
+
+.luminary-btn:hover { background: #ffde03; transform: translateY(-2px); }
+
+.luminary-img {
+  flex: 0 0 44%;
+  width: 44%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .luminary-inner { flex-direction: column; min-height: unset; }
+  .luminary-text { flex: none; width: 100%; padding: 36px 16px; box-sizing: border-box; }
+  .luminary-heading { font-size: 28px; }
+  .luminary-img { width: 100%; flex: none; height: 220px; }
+}
+
 /* ── Bottom CTA ── */
 
 .bottom-cta {
@@ -628,6 +708,21 @@
 
       <a href="#" class="donate-submit-btn" onclick="handleDonate(event)">Donate Now &rarr;</a>
       <p class="donate-card-note">&#x1F512; Secure &amp; encrypted &nbsp;|&nbsp; Berlin Lions Club Charities is a 501(c)(3) nonprofit &nbsp;|&nbsp; Tax-deductible</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── Luminaries ── -->
+<div class="luminary-section" id="luminaries">
+  <div class="treewalkcontainer">
+    <div class="luminary-inner">
+      <div class="luminary-text">
+        <div class="luminary-eyebrow">Honoring Veterans &mdash; Each November</div>
+        <h2 class="luminary-heading">Light a Luminary<br/>for a Veteran</h2>
+        <p class="luminary-body">Each November the Berlin Lions line the paths of Veterans Memorial Park with luminaries honoring Berlin&rsquo;s veterans. Every luminary purchased provides support for Berlin Veterans.</p>
+        <a href="https://berlin-lions-club.square.site/" target="_blank" rel="noopener" class="luminary-btn">Buy Luminaries &rarr;</a>
+      </div>
+      <img class="luminary-img" src="assets/images/luminary-veterans-park.jpg" alt="Luminaries lining the path at Veterans Memorial Park, Berlin" loading="lazy"/>
     </div>
   </div>
 </div>
