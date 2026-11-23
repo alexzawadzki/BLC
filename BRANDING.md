@@ -155,7 +155,6 @@ Photos live in `assets/images/`. Key images currently used on the site:
 | `061125173521memorial.jpg` | Memorial event |
 | `FB_IMG_176...` (11 files) | Recent Facebook event photos |
 | `luminary-veterans-park.jpg`, `luminary-gold-star-memorial.jpg`, `luminary-park-night.jpg`, `luminary-bridge-day.jpg` | Veterans Luminary Display at Veterans Memorial Park |
-| `luminary-display-2026-flyer.jpg`, `veterans-drive-2026-poster.jpg` | November 2026 posters (Luminary Display, Veterans Drive) |
 | `vip-fishing-adult-black-hawk.jpg`, `vip-fishing-adult-catch-1.jpg`, `vip-fishing-adult-catch-2.jpg` | VIP Adult Fishing Tournament aboard the Black Hawk |
 | `parade-tractors-1.jpg`, `parade-tractors-2.jpg` | Antique tractors in a town parade |
 | `easter-meals-2026.jpg`, `christmas-dinners-2025.jpg`, `thanksgiving-dinners-2025.jpg`, `summer-picnic-2025.jpg` | Community outreach collages |
